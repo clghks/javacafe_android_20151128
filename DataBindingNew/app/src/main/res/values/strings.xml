@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">DataBindingNew</string>
+    <string name="physical">%1$.2f cm, %2$.2f kg</string>
+</resources>

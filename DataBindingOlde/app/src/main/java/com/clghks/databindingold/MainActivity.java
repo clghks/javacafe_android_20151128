@@ -35,16 +35,11 @@ public class MainActivity extends AppCompatActivity {
     private void setUserData() {
         imageView.setImageResource(userData.getImage());
         nameTextView.setText(userData.getName() + " (" + userData.getJob()+ ")");
-        birthdayTextView.setText(getDateFormat(userData.getBirthday()));
+        birthdayTextView.setText(DateUtil.getDateFormat(userData.getBirthday()));
         physicalTextView.setText(getString(R.string.physical, userData.getHeight(), userData.getWeight()));
         schoolTextView.setText(userData.getSchool());
         belongTextView.setText(userData.getBelong());
         homepageUrlTextView.setText(userData.getHomepageUrl());
-    }
-
-    private String getDateFormat(Date birthday) {
-        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy년 MM월 dd일");
-        return dateFormat.format(birthday);
     }
 
     private void initView() {
