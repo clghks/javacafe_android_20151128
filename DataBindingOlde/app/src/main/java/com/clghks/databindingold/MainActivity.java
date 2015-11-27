@@ -32,14 +32,22 @@ public class MainActivity extends AppCompatActivity {
         setUserData();
     }
 
-    private void setUserData() {
-        imageView.setImageResource(userData.getImage());
-        nameTextView.setText(userData.getName() + " (" + userData.getJob()+ ")");
-        birthdayTextView.setText(DateUtil.getDateFormat(userData.getBirthday()));
-        physicalTextView.setText(getString(R.string.physical, userData.getHeight(), userData.getWeight()));
-        schoolTextView.setText(userData.getSchool());
-        belongTextView.setText(userData.getBelong());
-        homepageUrlTextView.setText(userData.getHomepageUrl());
+    private void initData() {
+        Calendar birthday = Calendar.getInstance();
+        birthday.set(Calendar.YEAR, 1993);
+        birthday.set(Calendar.MONTH, Calendar.MAY);
+        birthday.set(Calendar.DAY_OF_MONTH, 16);
+
+        userData = new User();
+        userData.setImage(getDrawable(R.mipmap.image_iu));
+        userData.setName("아이유");
+        userData.setBirthday(birthday.getTime());
+        userData.setJob("가수");
+        userData.setWeight(44f);
+        userData.setHeight(161.8f);
+        userData.setSchool("동덕여자고등학교");
+        userData.setBelong("로엔텐터테인먼트");
+        userData.setHomepageUrl("http://loen-tree.com/?p=11");
     }
 
     private void initView() {
@@ -52,21 +60,13 @@ public class MainActivity extends AppCompatActivity {
         homepageUrlTextView = (TextView)findViewById(R.id.tv_homepageUrl);
     }
 
-    private void initData() {
-        Calendar birthday = Calendar.getInstance();
-        birthday.set(Calendar.YEAR, 1993);
-        birthday.set(Calendar.MONTH, Calendar.MAY);
-        birthday.set(Calendar.DAY_OF_MONTH, 16);
-
-        userData = new User();
-        userData.setImage(R.mipmap.image_iu);
-        userData.setName("아이유");
-        userData.setBirthday(birthday.getTime());
-        userData.setJob("가수");
-        userData.setWeight(44f);
-        userData.setHeight(161.8f);
-        userData.setSchool("동덕여자고등학교");
-        userData.setBelong("로엔텐터테인먼트");
-        userData.setHomepageUrl("http://loen-tree.com/?p=11");
+    private void setUserData() {
+        imageView.setImageDrawable(userData.getImage());
+        nameTextView.setText(userData.getName() + " (" + userData.getJob() + ")");
+        birthdayTextView.setText(DateUtil.getDateFormat(userData.getBirthday()));
+        physicalTextView.setText(getString(R.string.physical, userData.getHeight(), userData.getWeight()));
+        schoolTextView.setText(userData.getSchool());
+        belongTextView.setText(userData.getBelong());
+        homepageUrlTextView.setText(userData.getHomepageUrl());
     }
 }

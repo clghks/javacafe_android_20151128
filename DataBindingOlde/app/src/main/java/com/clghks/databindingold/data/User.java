@@ -1,26 +1,28 @@
 package com.clghks.databindingold.data;
 
+import android.graphics.drawable.Drawable;
+
 import java.util.Date;
 
 /**
  * Created by chihwan on 15. 11. 26..
  */
 public class User {
-    private int image;          // 이미지
+    private Drawable image;     // 이미지
     private String name;        // 이름
-    private Date birthday;    // 출생
-    private float height;         // 키
-    private float weight;         // 몸무게
+    private Date birthday;      // 출생
+    private float height;       // 키
+    private float weight;       // 몸무게
     private String job;         // 직업
     private String school;      // 학교
     private String belong;      // 소속사
     private String homepageUrl; // 홈페이지
 
-    public int getImage() {
+    public Drawable getImage() {
         return image;
     }
 
-    public void setImage(int image) {
+    public void setImage(Drawable image) {
         this.image = image;
     }
 

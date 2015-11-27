@@ -8,11 +8,11 @@ import java.util.Date;
  * Created by chihwan on 15. 11. 26..
  */
 public class User {
-    private Drawable image;          // 이미지
+    private Drawable image;     // 이미지
     private String name;        // 이름
-    private Date birthday;    // 출생
-    private float height;         // 키
-    private float weight;         // 몸무게
+    private Date birthday;      // 출생
+    private float height;       // 키
+    private float weight;       // 몸무게
     private String job;         // 직업
     private String school;      // 학교
     private String belong;      // 소속사
