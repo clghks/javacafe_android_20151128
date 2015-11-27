@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        user = new User("Tes1t", "User");
+        user = new User("Test", "User");
         initView();
         setUserData();
     }
